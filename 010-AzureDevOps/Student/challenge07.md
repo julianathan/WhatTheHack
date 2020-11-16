@@ -16,6 +16,7 @@ Now that we have a deployed instance of our code, we are likely going to get a r
 
 In this challenge we will first create a second build pipeline that will build and run unit tests on any code before it gets checked into the master branch. We will also implement a few policies in Azure DevOps to ensure that our team is following the rules. Finally we will make a change to our code to see how branching in Git works. 
 
+0. Create a feature branch. 
 1. Clone the build pipeline that we created earlier.
    1. Remove all but the `restore`, `build` and `test` tasks.
    2. Turn off the continuous integration trigger.
