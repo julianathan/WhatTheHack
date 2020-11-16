@@ -15,7 +15,7 @@ You can also integrate 3rd party tools, into your Azure DevOps workflow. In this
 
 In this challenge we will deploy WhiteSource Bolt to scan our source code to see if we have any issues with our OSS dependencies. 
 
-1. Follow the directions in the above article to install WhiteSource Bolt
+1. Follow the directions in the above article to install WhiteSource Bolt. Note that the WhiteSource license must be activated from the Azure DevOps Project level Pipeline settings before it will work. 
 2. Add a task to your Pull Request Build to run WhiteSource Bolt
 
 ### Success Criteria
