@@ -19,7 +19,7 @@ In Azure DevOps we can use Azure Pipelines to automate deploying our Azure infra
 2. A release pipeline starts with an `Artifact`. In our pipeline we will be using the master branch of our Azure Repo.
 3. Next lets create the first stage in our Infrastructure Release to deploy our ARM template to Dev. Name the sage `Dev`, and it should have a single `ARM Template Deployment` task. 
    1. The task will ask you what Azure Subscription, Resource Group, and Resource Group Location you wish to use.
-   2. You need to create a `Azure Resource Manager` service connection, if one does not already exist. [(hint)} (https://docs.microsoft.com/en-us/azure/devops/pipelines/library/connect-to-azure?view=azure-devops)
+   2. You need to create a `Azure Resource Manager` service connection, if one does not already exist. [(hint)] (https://docs.microsoft.com/en-us/azure/devops/pipelines/library/connect-to-azure?view=azure-devops)
    3. The task will also ask you what Template you want to deploy. Use the `...` to pick the one in the ARM templates folder. 
    4. You will need to override many of the templates parameters, replacing the `<prefix>` part with a unique lowercase 5 letter name.
 4. You should now be able to save and execute your infrastructure release pipeline successfully and see the dev environment out in Azure. 
