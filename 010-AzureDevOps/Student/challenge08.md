@@ -17,9 +17,9 @@ In this challenge we will look at some of the telemetry that has already been co
 1. Review the `container-webapp-template.json` ARM template. Find where the Application Insights node was created and note how it the App Service Web Site was configured to send its logs there. 
 2. Create a dashboard in the Azure Portal to provide a summary of the status of our site. ([Hint](https://docs.microsoft.com/en-us/azure/azure-monitor/app/overview-dashboard#application-dashboard))
 3. Implement an outside in availability test for the homepage of your site ([Hint](https://docs.microsoft.com/en-us/azure/azure-monitor/app/monitor-web-app-availability))
-4. Link your Application Insights instance with your Azure Boards instance ([Hint](https://azure.microsoft.com/en-us/blog/application-insights-work-item-integration-with-visual-studio-team-services/))
+4. Link your Application Insights instance with your Azure Boards instance ([Hint](https://azure.microsoft.com/en-us/blog/application-insights-work-item-integration-with-visual-studio-team-services/)) When linking, use the Azure DevOps Project name for the `Area` field.
 5. Using the failures feature of Application Insights find an exception that happened on your site. Using the link you created in the last step, open a work item to resolve that exception. 
-    > NOTE: If your site doesn’t have any exceptions, you can create one easily by trying to go to a page that doesn’t exist.
+    > NOTE: If your site doesn’t have any exceptions, you can create one easily by trying to go to a page that doesn’t exist or create a work item from any entry found through the search feature.
     > NOTE: It takes a min or two after an event happens for it to make its way to Application Insights and for it to be indexed so you can see it in the portal.
 
 ### Success Criteria
