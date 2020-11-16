@@ -24,7 +24,7 @@ In Azure DevOps we use Azure Pipelines to automate our build process. For our ap
 4. You can delete the `publish artifact` step since we are going to create a container and publish it to Azure Container Registry.
 5. Now that our .NET core application is compiled and all the unit tests have been run, we need to package it into a Docker Container and publish the container to Azure Container Registry, to do this we are going to add a docker task to our build pipeline.
    1. We want to use the `buildAndPush` command with the following Docker file `**/Dockerfile`, build context `$(System.DefaultWorkingDirectory)/PublishedWebApp` and tag `$(Build.BuildId)` (NOTE: here we are dynamically pulling the build number from Azure DevOps at run time)
-   2. Next we need to connect it to the container registry and repository (i.e. `<prefix>devopsimage`) that we setup in our infrastructure as code challenge.
+   2. Next we need to connect it to the container registry and repository (i.e. `<prefix>devopsimage`) that we setup in our infrastructure as code challenge. You may need to create a `Docker Registry` service connection to for your Azure DevOps project to access your Azure container registry. 
 6. Lets kick off a build manually to ensure that we have a working build.
 7. Next lets notify the team if the build breaks by setting a **Build Option** to create a new Work Item. 
 8.  Now, make and check in a code change that will break the build. Ensure that a work item gets created. 
