@@ -20,7 +20,7 @@ In Azure DevOps we use Azure Pipelines to automate our build process. For our ap
    1. First we call the `restore` command, this will get all the dependencies that our .net core application needs to compile
    2. Next we call the `build` command, this will actually compile our code
    3. Next we call the `test` command, this will execute all our unit tests 
-   4. The last .NET Core build task in the template is to `publish` the .net core app. The template publishes the application to a zip file, we don’t want it zipped so undo this setting. Additionally, change the output argument to here `$(System.DefaultWorkingDirectory)/PublishedWebApp` 
+   4. The last .NET Core build task in the template is to `publish` the .net core app. The template publishes the application to a zip file, we don’t want it zipped so undo this setting. Additionally, change the output argument here `$(System.DefaultWorkingDirectory)/PublishedWebApp` 
 4. You can delete the `publish artifact` step since we are going to create a container and publish it to Azure Container Registry.
 5. Now that our .NET core application is compiled and all the unit tests have been run, we need to package it into a Docker Container and publish the container to Azure Container Registry, to do this we are going to add a docker task to our build pipeline.
    1. We want to use the `buildAndPush` command with the following Docker file `**/Dockerfile`, build context `$(System.DefaultWorkingDirectory)/PublishedWebApp` and tag `$(Build.BuildId)` (NOTE: here we are dynamically pulling the build number from Azure DevOps at run time)
