@@ -15,7 +15,7 @@ In Azure DevOps we use an Azure Pipeline to release our software. In this challe
 
 1. Create a new Release Pipeline using the Azure App Service Deployment Template
 2. To start off our deployment will only have one stage, lets call it `dev`
-3. The output of our CI Build pipeline will be the input artifact to our CD Release pipeline, add it. 
+3. The output of our CI Build pipeline from Challenge 5 is the input artifact to our CD Release pipeline; add this artifact. 
 4. Enable Continuous deployment so that each time the CI pipeline finishes successfully, this pipeline will start. 
 5. If you look at the tasks for our `dev` stage you will see a single `Deploy Azure App Service` task, we just need to configure it. 
    1. Select your subscription, a app service type of `Web App for Containers (Linux)`, point it at your dev instance, enter your registry name `<prefix>devopsreg.azurecr.io` (NOTE: here we need to fully qualify it), your image/repository name `<prefix>devopsimage`, and your tag `$(Build.BuildId)` (NOTE: here we are dynamically pulling the build number from Azure DevOps at run time)
